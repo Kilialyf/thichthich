@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+* {
+    font-family: Readex Pro, sans-serif;
+}
+.player{
+    height: 450px;
+    width: 400px;
+    background-color: rgb(255 255 255/.4);
+    border-radius: 20px;
+}
+body{
+    background-image: url(./thichthichposter.jpg);
+    backdrop-filter: blur(8px);
+    background-size: cover;
+    height:100vh ;
+    width:100vw;
+    margin:0px;
+}
+.ctn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+.img{
+    position: absolute ;
+    top: 115px;
+    width: 265px;
+    height: 450px;
+    border-radius: 20px;
+}
+.img > img {
+    height: 265px;
+    width: 265px;
+    object-fit :cover;
+    border-radius: 20px;
+}
+h2{
+    font-size: 1.5em;
+}
+h2,h3{
+    text-align: center;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.btns > button {
+    background: none;
+    padding: 30px;
+    border: 1px;
+    font-size: 1.3em;
+    transition: .1s linear;
+}
+.btns>button:nth-child(2){
+    font-size: 1.5em;
+}
+.btns>button:hover {
+    color: white;
+    transform: scale(1.55);
+}
+#lin{
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(255 255 255/1);
+    margin: 5px 5px;}
+.line {
+    width: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color : black ;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Me</title>
+    <link rel="stylesheet" href="thichthich.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <audio id="song" src="./thichthich.mp3"></audio>
+    <div class="ctn">
+        <div class="img">
+            <img src="./phuongly.jpg"/>
+            <h2>ThichThich</h2>
+            <h3>Phương Ly</h3>
+            <div id="lin">
+                <div class="line"></div>
+            </div>
+            <div class="btns">
+                <button><i class="fa-solid fa-backward"></i></button>
+                <button onclick="playPause()"><i class="fa-solid fa-play" id="crtlIcon"></i></button>
+                <button><i class="fa-solid fa-forward"></i></button>
+            </div>
+        </div>
+        <div class="player">
+
+        </div>
+    </div>
+</body>
+<script>
+    let lin = document.getElementById("lin");
+    let song = document.getElementById("song");
+    let ctrlIcon = document.getElementById("crtlIcon");
+
+    song.onloadedmetadata = function () {
+        lin.max = song.duration;
+        lin.value = song.currentTime;
+    }
+    function playPause() {
+        if(crtlIcon.classList.contains("fa-pause")) {
+            song.pause();
+            crtlIcon.classList.remove("fa-pause");
+            crtlIcon.classList.add("fa-play");
+        } 
+        else {
+            song.play();
+            crtlIcon.classList.add("fa-pause");
+            crtlIcon.classList.remove("fa-play");
+        }
+    }
+    if(song.play()){
+        setInterval(() => {
+            lin.value = song.currentTime;
+        }, 500)
+    }
+    lin.onchange = function(){
+        song.play();
+        song.currentTime = lin.value;
+        crtlIcon.classList.add("fa-pause");
+        crtlIcon.classList.remove("fa-play");
+    }
+</script>
+</html>
